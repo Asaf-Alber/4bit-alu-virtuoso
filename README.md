@@ -2,13 +2,10 @@
 
 ## Overview
 
-This project implements a synchronous 4-bit ALU using standard cells from **gsclib045** in Cadence Virtuoso.
-
-Operations:
-- X = A + B  
-- Y = X − C (two’s complement subtraction)
-
-The design includes registered inputs/outputs, a tree-based Kogge-Stone prefix adder, multi-voltage timing characterization (0.9V / 1.2V), and a DRC/LVS-clean physical layout implementation.
+Designed and implemented a synchronous 4-bit ALU in Cadence Virtuoso (gsclib045) featuring a Kogge-Stone prefix adder and two’s complement subtraction.  
+Characterized critical path delay and flip-flop timing at 0.9V and 1.2V to derive maximum operating frequency (up to 3.31 GHz).  
+Completed full standard-cell physical implementation with structured row-based placement and optimized metal routing.  
+Adder layout verified DRC-clean and LVS-matched with validated area constraints.
 
 ---
 
