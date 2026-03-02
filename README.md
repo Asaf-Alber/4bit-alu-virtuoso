@@ -97,7 +97,9 @@ Design characteristics:
 
 ### Functional Verification
 
-![Waveform](figures/waveform_add.jpeg)
+![Adder Waveform](figures/waveform_add.jpeg)
+![Subtractor Waveform](figures/waveform_sub.jpeg)
+![System Waveform](figures/waveform_system.jpeg)
 
 Bus-based waveform validation confirms:
 - Correct ADD operation
