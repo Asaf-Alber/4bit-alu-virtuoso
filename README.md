@@ -98,7 +98,7 @@ Design characteristics:
 ### Functional Verification
 <<<<<<< HEAD
 
-![Waveform](figures/waveform_add.png)
+![Waveform](figures/waveform_add.jpeg)
 =======
 ![Waveform](figures/waveform_add.jpeg)
 >>>>>>> 911ea217b8261f033566b5b14dded558a7d581b0
