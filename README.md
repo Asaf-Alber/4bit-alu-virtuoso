@@ -45,6 +45,23 @@ flowchart LR
 
 ---
 
+## Subtraction Implementation
+
+Subtraction was implemented using two’s complement arithmetic:
+
+Y = X - C  
+= X + (~C + 1)
+
+The subtractor reuses the tree-based adder architecture by:
+
+- Inverting operand C
+- Forcing the carry-in to logic ‘1’
+- Preserving the same prefix carry propagation structure
+
+This approach avoids duplicating arithmetic logic and maintains consistent critical path behavior between addition and subtraction.
+
+Timing analysis confirmed that subtraction shares the same worst-case carry propagation path as addition.
+
 ## Timing Characterization
 
 The design was characterized at:
