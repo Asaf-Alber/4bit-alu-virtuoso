@@ -34,7 +34,7 @@ flowchart LR
 
 ## Top-Level Floorplan
 
-![Top Floorplan](figures/top_floorplan.png)
+![Top Floorplan](figures/top_floorplan.jpeg)
 
 Hierarchical organization separating ADD and SUB datapaths with structured register placement.
 
@@ -42,7 +42,7 @@ Hierarchical organization separating ADD and SUB datapaths with structured regis
 
 ## Tree-Based Adder Architecture
 
-![Adder Schematic](figures/kogge_stone_schematic.png)
+![Adder Schematic](figures/kogge_stone_schematic.jpeg)
 
 Prefix carry propagation structure selected according to project requirements.
 
@@ -65,7 +65,7 @@ This avoids duplication of arithmetic logic and preserves timing consistency.
 
 ## Physical Design
 
-![Full Layout](figures/full_layout.png)
+![Full Layout](figures/full_layout.jpeg)
 
 Standard-cell row-based placement with structured routing and global power rails.
 
@@ -74,13 +74,12 @@ Standard-cell row-based placement with structured routing and global power rails
 ## Verification
 
 ### Functional Verification
-![Waveform](figures/waveform_add.png)
+![Waveform](figures/waveform_add.jpeg)
 
 Bus-based waveform validation for ADD and SUB operations.
 
 ### DRC / LVS
-![DRC](figures/drc_clean.png)
-![LVS](figures/lvs_clean.png)
+![DRC/LVS](figures/clean_drc_lvs.jpeg)
 
 Adder layout is DRC-clean and LVS-matched against schematic.
 
