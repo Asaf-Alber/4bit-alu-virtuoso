@@ -95,17 +95,33 @@ Design characteristics:
 
 ## Verification
 
-### Functional Verification
+### Functional Verification – Addition
 
 ![Adder Waveform](results/waveform_add.jpeg)
+
+This waveform verifies correct sum and carry generation for the ADD operation.
+Input registers A and B are sampled on the clock edge, and the result X is produced one cycle later as expected.
+
+---
+
+### Functional Verification – Subtraction
+
 ![Subtractor Waveform](results/waveform_sub.jpeg)
+
+Subtraction is implemented using two’s complement (C inverted + Cin = 1).
+The waveform confirms correct borrow behavior and proper sign handling.
+
+---
+
+### Full System Timing Verification
+
 ![System Waveform](results/waveform_system.jpeg)
 
-Bus-based waveform validation confirms:
-- Correct ADD operation
-- Correct SUB operation
-- Proper multi-cycle timing alignment
+The complete multi-cycle timing behavior confirms:
 
+F[N + 2] = A[N] + B[N] − C[N + 1]
+
+The result is available two clock cycles after input sampling, matching the designed pipeline behavior.
 ### DRC / LVS
 
 ![DRC/LVS](figures/clean_drc_lvs.jpeg)
