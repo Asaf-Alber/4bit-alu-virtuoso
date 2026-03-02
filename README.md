@@ -107,7 +107,6 @@ Bus-based waveform validation confirms:
 ### DRC / LVS
 
 ![DRC/LVS](figures/clean_drc_lvs.jpeg)
->>>>>>> 911ea217b8261f033566b5b14dded558a7d581b0
 
 Adder layout is:
 - DRC-clean
