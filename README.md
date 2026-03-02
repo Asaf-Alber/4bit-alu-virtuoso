@@ -96,12 +96,8 @@ Design characteristics:
 ## Verification
 
 ### Functional Verification
-<<<<<<< HEAD
 
 ![Waveform](figures/waveform_add.jpeg)
-=======
-![Waveform](figures/waveform_add.jpeg)
->>>>>>> 911ea217b8261f033566b5b14dded558a7d581b0
 
 Bus-based waveform validation confirms:
 - Correct ADD operation
@@ -109,11 +105,7 @@ Bus-based waveform validation confirms:
 - Proper multi-cycle timing alignment
 
 ### DRC / LVS
-<<<<<<< HEAD
 
-![DRC](figures/drc_clean.png)  
-![LVS](figures/lvs_clean.png)
-=======
 ![DRC/LVS](figures/clean_drc_lvs.jpeg)
 >>>>>>> 911ea217b8261f033566b5b14dded558a7d581b0
 
@@ -184,7 +176,6 @@ Additional area overhead results from:
 
 ## Skills Demonstrated
 
-<<<<<<< HEAD
 - Kogge-Stone prefix adder design
 - Two’s complement subtraction reuse strategy
 - Critical path isolation methodology
@@ -205,4 +196,4 @@ Additional area overhead results from:
 - Row-based placement strategy
 - DRC and LVS verification
 - Hierarchical design methodology
->>>>>>> 911ea217b8261f033566b5b14dded558a7d581b0
+>>>>>>> 
