@@ -4,12 +4,11 @@
 
 This project implements a synchronous 4-bit ALU using standard cells from gsclib045 in Cadence Virtuoso.
 
-The ALU performs:
-
+Operations:
 - X = A + B
 - Y = X − C (two’s complement subtraction)
 
-The design includes input/output registers, tree-based adder architecture, timing characterization at 0.9V and 1.2V, and a DRC/LVS-clean layout for the adder.
+The design includes input/output registers, tree-based prefix adder architecture, timing characterization at 0.9V and 1.2V, and a DRC/LVS-clean physical layout.
 
 ---
 
@@ -17,70 +16,102 @@ The design includes input/output registers, tree-based adder architecture, timin
 
 ```mermaid
 flowchart LR
-  A[A 4-bit] --> RA[Input Register A]
-  B[B 4-bit] --> RB[Input Register B]
-  C[C 4-bit] --> RC[Input Register C]
+  A[A 4-bit] --> RA[Reg A]
+  B[B 4-bit] --> RB[Reg B]
+  C[C 4-bit] --> RC[Reg C]
 
-  RA --> ADD[Tree Adder]
+  RA --> ADD[Tree-Based Adder]
   RB --> ADD
-  ADD --> RX[Register X]
+  ADD --> RX[Reg X]
 
-  RX --> SUB[Subtractor]
+  RX --> SUB[Two's Complement Subtractor]
   RC --> SUB
-  SUB --> RY[Output Register Y 5-bit]
+  SUB --> RY[Reg Y 5-bit]
   RY --> Y[Y 5-bit]
 ```
 
 ---
 
-## Design Flow
+## Top-Level Floorplan
 
-1. Architecture selection (tree-based prefix adder)
-2. Schematic implementation using gsclib045 cells
-3. Functional verification (ADD and SUB)
-4. Critical path identification
-5. Timing characterization @ 0.9V and 1.2V
-6. Adder layout implementation
-7. DRC and LVS verification
+![Top Floorplan](figures/top_floorplan.png)
+
+Hierarchical organization separating ADD and SUB datapaths with structured register placement.
+
+---
+
+## Tree-Based Adder Architecture
+
+![Adder Schematic](figures/kogge_stone_schematic.png)
+
+Prefix carry propagation structure selected according to project requirements.
+
+---
+
+## Subtraction Implementation
+
+Subtraction implemented using two’s complement:
+
+Y = X − C  
+= X + (~C + 1)
+
+The subtractor reuses the same prefix carry structure by:
+- Inverting operand C
+- Forcing carry-in to logic ‘1’
+
+This avoids duplication of arithmetic logic and preserves timing consistency.
+
+---
+
+## Physical Design
+
+![Full Layout](figures/full_layout.png)
+
+Standard-cell row-based placement with structured routing and global power rails.
+
+---
+
+## Verification
+
+### Functional Verification
+![Waveform](figures/waveform_add.png)
+
+Bus-based waveform validation for ADD and SUB operations.
+
+### DRC / LVS
+![DRC](figures/drc_clean.png)
+![LVS](figures/lvs_clean.png)
+
+Adder layout is DRC-clean and LVS-matched against schematic.
 
 ---
 
 ## Timing Characterization
 
-The design was characterized at:
+Characterized at:
 
 - VDD = 1.2V
 - VDD = 0.9V
 
 Measured:
-
 - Critical path delay
 - Setup / Hold constraints
 - Maximum clock frequency (Fmax)
 
-(Detailed results in /results)
-
----
-
-## Layout
-
-Adder layout implemented with:
-
-- Row-based standard cell placement
-- Clean DRC
-- Clean LVS
-- Area constraint satisfied
-
-(Layout screenshots in /figures)
+| Voltage | Critical Path (ns) | Fmax (GHz) |
+|----------|--------------------|------------|
+| 1.2V     | TBD                | TBD        |
+| 0.9V     | TBD                | TBD        |
 
 ---
 
 ## Skills Demonstrated
 
-- Digital synchronous design
 - Tree-based prefix adder implementation
-- Timing analysis and Fmax derivation
-- Multi-voltage characterization
-- Physical design (placement & routing)
-- DRC/LVS verification
-- Hierarchical schematic methodology
+- Synchronous digital design
+- Critical path identification
+- Multi-voltage timing analysis
+- Standard-cell physical layout
+- Row-based placement strategy
+- DRC and LVS verification
+- Hierarchical design methodology
