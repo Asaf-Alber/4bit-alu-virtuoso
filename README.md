@@ -42,7 +42,7 @@ The subtractor stage introduces the longest logic path and therefore determines 
 
 ## Top-Level Floorplan
 
-![Top Floorplan](figures/top_floorplan.png)
+![Top Floorplan](figures/top_floorplan.jpeg)
 
 Hierarchical separation between ADD and SUB datapaths with structured register placement and controlled signal flow.
 
@@ -50,7 +50,7 @@ Hierarchical separation between ADD and SUB datapaths with structured register p
 
 ## Tree-Based Adder Architecture
 
-![Adder Schematic](figures/kogge_stone_schematic.png)
+![Adder Schematic](figures/kogge_stone_schematic.jpeg)
 
 A Kogge-Stone prefix structure was selected to minimize carry propagation delay through parallel prefix computation.
 
@@ -81,7 +81,7 @@ Overflow handling is implemented by detecting operand sign similarity and select
 
 ## Physical Design
 
-![Full Layout](figures/full_layout.png)
+![Full Layout](figures/full_layout.jpeg)
 
 Design characteristics:
 
@@ -96,8 +96,12 @@ Design characteristics:
 ## Verification
 
 ### Functional Verification
+<<<<<<< HEAD
 
 ![Waveform](figures/waveform_add.png)
+=======
+![Waveform](figures/waveform_add.jpeg)
+>>>>>>> 911ea217b8261f033566b5b14dded558a7d581b0
 
 Bus-based waveform validation confirms:
 - Correct ADD operation
@@ -105,9 +109,13 @@ Bus-based waveform validation confirms:
 - Proper multi-cycle timing alignment
 
 ### DRC / LVS
+<<<<<<< HEAD
 
 ![DRC](figures/drc_clean.png)  
 ![LVS](figures/lvs_clean.png)
+=======
+![DRC/LVS](figures/clean_drc_lvs.jpeg)
+>>>>>>> 911ea217b8261f033566b5b14dded558a7d581b0
 
 Adder layout is:
 - DRC-clean
@@ -176,6 +184,7 @@ Additional area overhead results from:
 
 ## Skills Demonstrated
 
+<<<<<<< HEAD
 - Kogge-Stone prefix adder design
 - Two’s complement subtraction reuse strategy
 - Critical path isolation methodology
@@ -187,3 +196,13 @@ Additional area overhead results from:
 - DRC & LVS verification
 - Area constraint validation
 - Hierarchical synchronous design methodology
+=======
+- Tree-based prefix adder implementation
+- Synchronous digital design
+- Critical path identification
+- Multi-voltage timing analysis
+- Standard-cell physical layout
+- Row-based placement strategy
+- DRC and LVS verification
+- Hierarchical design methodology
+>>>>>>> 911ea217b8261f033566b5b14dded558a7d581b0
